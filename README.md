@@ -32,6 +32,12 @@ A aplicação é dividida em duas interfaces principais baseadas em arquitetura 
 
 ---
 
+## Rota dos alunos
+* https://monteirocode1.github.io/projeto-merenda/
+
+## Rota do Painel da Cozinha
+* https://monteirocode1.github.io/projeto-merenda/merendeira
+
 ## 👥 Equipa de Desenvolvimento (ADS - Uninassau Parnaíba)
 * Danilo Silva Brito
 * Guilherme Monteiro Duarte
