@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.admin-card {
+  max-width: 600px;
+}
+
+h2 {
+  color: #0056b3;
+  margin-bottom: 8px;
+}
+
+hr {
+  margin-bottom: 15px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #003d82;
+}
+
+button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+.counter-box {
+  background-color: #e9f5ff;
+  border: 2px solid #0056b3;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.counter-number {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #0056b3;
+}
+
+.order-list {
+  list-style: none;
+  margin-top: 10px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.order-list li {
+  background: #f8f9fa;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.status-success {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.status-error {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #bd2130;
+}
+
+.hidden {
+  display: none;
+}

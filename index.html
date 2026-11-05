@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CETI Ozias Correia - Pedido de Almoço</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Supabase JS Client via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div class="card">
+    <h2>Sistema de Gestão da Merenda 🍽️</h2>
+    <p><strong>CETI Ozias Correia</strong></p>
+    <hr>
+    
+    <form id="orderForm">
+      <label for="studentName">Nome Completo do Aluno:</label>
+      <input type="text" id="studentName" placeholder="Ex: João Silva" required>
+
+      <label for="studentClass">Turma:</label>
+      <select id="studentClass" required>
+        <option value="">Selecione sua turma</option>
+        <option value="1º Ano A">1º Ano A</option>
+        <option value="1º Ano B">1º Ano B</option>
+        <option value="2º Ano A">2º Ano A</option>
+        <option value="2º Ano B">2º Ano B</option>
+      </select>
+
+      <button type="submit" id="submitBtn">Confirmar Almoço</button>
+    </form>
+    
+    <div id="statusMessage" class="hidden"></div>
+  </div>
+
+  <script>
+    // Configurações do Supabase
+    const SUPABASE_URL = 'https://jkfwiwwuntknukzwvqsu.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_uISqxRHPyqk0qw2jrEDASQ_ErG9qExw';
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    const orderForm = document.getElementById('orderForm');
+    const statusMessage = document.getElementById('statusMessage');
+    const submitBtn = document.getElementById('submitBtn');
+
+    orderForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById('studentName').value.trim();
+      const turma = document.getElementById('studentClass').value;
+
+      if (!nome || !turma) return;
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Enviando...';
+
+      // Insere o pedido no banco de dados em nuvem
+      const { data, error } = await supabaseClient
+        .from('pedidos')
+        .insert([{ nome: nome, turma: turma }]);
+
+      submitBtn.disabled = false;
+      submitBtn.innerText = 'Confirmar Almoço';
+
+      if (error) {
+        statusMessage.className = 'status-error';
+        statusMessage.innerText = '❌ Erro ao registrar pedido. Tente novamente.';
+      } else {
+        statusMessage.className = 'status-success';
+        statusMessage.innerText = `✅ Pedido confirmado, ${nome}! Seus dados foram salvos.`;
+        orderForm.reset();
+      }
+    });
+  </script>
+</body>
+</html>
