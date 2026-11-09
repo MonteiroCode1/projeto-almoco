@@ -27,7 +27,7 @@ A aplicação é dividida em duas interfaces principais baseadas em arquitetura 
 
 ## 🔗 Acessos Oficiais do Projeto
 * **[🔗 Rota dos Alunos](https://monteirocode1.github.io/projeto-almoco/)**
-* **[🔗 Rota do Painel da Cozinha](https://monteirocode1.github.io/projeto-merenda/merendeira)**
+* **[🔗 Rota do Painel da Cozinha](https://monteirocode1.github.io/projeto-almoco/merendeira)**
 
 ---
 
